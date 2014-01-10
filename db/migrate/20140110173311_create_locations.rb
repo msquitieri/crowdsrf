@@ -3,7 +3,7 @@ class CreateLocations < ActiveRecord::Migration
     create_table :locations do |t|
       t.float :lat
       t.float :lng
-      t.integer :foursquare_id
+      t.string :foursquare_id
       t.string :name
 
       t.timestamps

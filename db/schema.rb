@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140110173311) do
   create_table "locations", force: true do |t|
     t.float    "lat"
     t.float    "lng"
-    t.integer  "foursquare_id"
+    t.string   "foursquare_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
