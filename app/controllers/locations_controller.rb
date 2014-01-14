@@ -1,25 +1,30 @@
 class LocationsController < ApplicationController
-  before_action :set_location, :init_foursquare, only: [:show, :edit, :update, :destroy]
+  before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :init_foursquare, only: [:index]
 
   # GET /locations
   # GET /locations.json
   def index
     # @locations = Location.all
+    @locations = []
+
     latlng = "#{location_params[:lat]},#{location_params[:lng]}"
     response = @foursquare.search_venues(:ll => latlng)
+    foursquare_locations = response.groups[0].items
 
-    response.groups[0].items.each do |fsq_location|
-      location = Location.find_by_foursquare_id(fsq_location.id)
-      
-      Location.addFoursquareLocation(fsq_location) if location.empty?
+    foursquare_locations.each do |foursquare_location|
+      location = Location.find_by_foursquare_id(foursquare_location.id)
+      location = Location.addFoursquareLocation(foursquare_location) if location.nil?
+
+      @locations.push(location)
     end
-
-    @locations = response.groups[0].items
   end
 
   # GET /locations/1
   # GET /locations/1.json
   def show
+    Photo.getNewPhotosFromLocation(@location);
+    @location.reload
   end
 
   # GET /locations/new
