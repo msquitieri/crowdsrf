@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
+# Use Postgre SQL for Horoku deployment
+# gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -37,11 +40,17 @@ group :development, :test do
     gem "factory_girl_rails", "~> 4.0"
 end
 
-# Use Twitter Bootstrap as front-end framework
-gem "twitter-bootstrap-rails", "~> 2.2.8"
-
 # Foursquare API 
 gem "foursquare2", "~> 1.9.8"
+
+# Instagram API
+gem "instagram", "~> 0.10.0"
+
+# Google Maps Wrapper for Rails
+gem "gmaps4rails", "~> 2.1.1"
+
+# Heroku dependency
+# gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
