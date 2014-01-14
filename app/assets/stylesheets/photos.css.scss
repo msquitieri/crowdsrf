@@ -1,0 +1,16 @@
+// Place all the styles related to the Photos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#photos-holder {
+	margin-top: 20px;
+	text-align: center;
+}
+
+#photos-holder a img {
+	margin: auto;
+	text-align: center;
+	border: 5px solid white;
+	box-shadow: 1px 1px 7px black;
+	margin-left: -3px;
+}

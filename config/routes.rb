@@ -1,4 +1,6 @@
 Crowdsrf::Application.routes.draw do
+  resources :photos
+
   resources :locations
 
   get "home/index"
