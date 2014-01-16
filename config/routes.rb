@@ -1,10 +1,12 @@
 Crowdsrf::Application.routes.draw do
-  resources :photos
+  get '/tags/search/' => 'tags#search'
 
+  resources :tags
+  resources :photos
   resources :locations
 
-  get "home/index"
   root "home#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
