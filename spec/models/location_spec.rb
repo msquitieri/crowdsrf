@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Location do
-  pending "add some examples to (or delete) #{__FILE__}"
+	before (:each) do 
+		@location = FactoryGirl.create(:location)
+	end
+
+	it 'should have lat and lng' do 
+		@location.lat.should be_present
+		@location.lng.should be_present
+	end
 end
