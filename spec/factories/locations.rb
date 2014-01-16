@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :location do
     lat 1.5
     lng 1.5
-    foursquare_id ""
-    name "MyString"
+    foursquare_id "myfoursquareID"
+    name "Empire State Building"
   end
 end
