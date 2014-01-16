@@ -3,7 +3,7 @@
 <h3 class='text-center'>Photos for <%= @location.name %></h3>
 
 <div id='photos-holder'>
-	<% @location.photos.each do |photo| %>
+	<% @location.photos.order("created_at desc").limit(40).each do |photo| %>
 		<%= link_to image_tag(photo.low_resolution), photo.link %>
 	<% end %>
 </div>
