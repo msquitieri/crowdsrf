@@ -1,5 +1,5 @@
 Crowdsrf::Application.routes.draw do
-  get '/tags/search/' => 'tags#search'
+  get '/tags/search/' => 'tags#search', as: :tag_search
 
   resources :tags
   resources :photos
