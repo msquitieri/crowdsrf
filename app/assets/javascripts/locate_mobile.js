@@ -72,6 +72,7 @@ function setMap(latitude, longitude) {
 
 	$mapholder.show();
 	$("#map-button-holder").removeClass("hidden");
+	$("#venue-list-holder").removeClass("hidden");
 }
 
 function clearMarkers() {
