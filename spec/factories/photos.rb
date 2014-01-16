@@ -2,11 +2,10 @@
 
 FactoryGirl.define do
   factory :photo do
-    low_resolution "MyString"
-    standard_resolution "MyString"
-    link "MyString"
-    thumbnail "MyString"
-    location ""
-    instagram_id "MyString"
+    low_resolution "someURL"
+    standard_resolution "someURL"
+    link "someURL"
+    thumbnail "someURL"
+    instagram_id "myInstagramID"
   end
 end
