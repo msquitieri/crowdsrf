@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140112185310) do
+ActiveRecord::Schema.define(version: 20140115150851) do
 
   create_table "locations", force: true do |t|
     t.float    "lat"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20140112185310) do
     t.string   "thumbnail"
     t.integer  "location_id"
     t.string   "instagram_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tag_id"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
