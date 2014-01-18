@@ -9,4 +9,12 @@ describe Location do
 		@location.lat.should be_present
 		@location.lng.should be_present
 	end
+
+	it 'should have a foursquare_id' do
+		@location.foursquare_id.should be_present
+	end
+
+	it 'should have a name' do
+		@location.name.should be_present
+	end
 end

@@ -16,4 +16,8 @@ describe Photo do
 	it 'should have a link' do
 		@photo.link.should be_present
 	end
+
+	it 'should have an instagram_id' do
+		@photo.instagram_id.should be_present
+	end
 end
