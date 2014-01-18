@@ -6,9 +6,7 @@ class TagsController < ApplicationController
     name = params[:tag].downcase unless params[:tag].nil?
     name = name.gsub(/#/, '');  # Remove any hashtags, since Instagram will throw an error.
 
-    Rails.logger.info "About to search for tag with name #{name}."
     @tag = Tag.find_by_name(name) || Tag.create(name: name)
-    Rails.logger.info("redirecting...")
 
     redirect_to tag_path(@tag)
   end
