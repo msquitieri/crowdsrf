@@ -8,9 +8,11 @@ class LocationsController < ApplicationController
     # @locations = Location.all
     @locations = []
 
+    version = "20140206"       # YYYYMMDD required for all foursquare API calls as of 1/28/14
+
     latlng = "#{location_params[:lat]},#{location_params[:lng]}"
-    response = @foursquare.search_venues(:ll => latlng)
-    foursquare_locations = response.groups[0].items
+    response = @foursquare.search_venues(:ll => latlng, :v => version);
+    foursquare_locations = response.venues
 
     foursquare_locations.each do |foursquare_location|
       location = Location.find_by_foursquare_id(foursquare_location.id)
